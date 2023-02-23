@@ -27,7 +27,12 @@ variable "path" {
   default     = "/"
   description = "The path to the role."
 }
-
+variable "permissions_boundary" {
+  type        = string
+  default     = ""
+  description = "The ARN of the policy that is used to set the permissions boundary for the role."
+  sensitive   = true
+}
 variable "policy" {
   default     = ""
   description = "The policy document."
