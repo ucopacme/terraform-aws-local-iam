@@ -1,4 +1,32 @@
 # terraform-aws-local-iam
+Terraform AWS IAM Module
+
+
+-->
+
+Terraform module to provision AWS [`IAM user`]
+
+
+
+## Introduction
+
+The module will create:
+
+*  Local IAM user
+
+
+## Usage
+1. Create main.tf config file, copy/past the following configuration.
+
+
+
+
+```hcl
+
+#
+# 
+
+
 
 
 provider "aws" {
@@ -18,8 +46,8 @@ module "iam-user" {
     "createdBy"      = "terraform"
     "environment"    = "dev"
     "group"          = "chs"
-    "source"         = "https://github.com"
-   
+    "source"         = "https://github.com/
+    
   }
 }
 
@@ -36,3 +64,6 @@ data "aws_iam_policy_document" "default" {
 data "aws_iam_policy" "ReadOnlyAccess" {
   arn = "arn:aws:iam::aws:policy/AmazonAthenaFullAccess"
 }
+
+
+##
