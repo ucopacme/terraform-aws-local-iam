@@ -17,7 +17,7 @@ resource "aws_iam_user_policy" "default" {
 }
 
 resource "aws_iam_user_policy_attachment" "default" {
-  count      = var.enabled && var.policy_enabled && var.policy_arn != "" ? 1 : 0
+  count      = var.enabled && var.policy_arn_enabled && var.policy_arn != "" ? 1 : 0
   #user       = aws_iam_user.default.*.name[0]
   user       = aws_iam_user.default[count.index].name
   policy_arn = var.policy_arn
