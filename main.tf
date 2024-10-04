@@ -9,7 +9,7 @@ resource "aws_iam_user" "default" {
 }
 
 resource "aws_iam_user_policy" "default" {
-  count  = var.enabled && var.policy != "" ? 1 : 0  # Only create if enabled and policy is not empty
+  count  = var.enabled && var.policy_enabled && var.policy_arn != "" ? 1 : 0
   name   = var.name
   #user   = aws_iam_user.default.*.name[0]
   user       = aws_iam_user.default[count.index].name
