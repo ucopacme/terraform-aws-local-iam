@@ -34,7 +34,7 @@ variable "permissions_boundary" {
   sensitive   = true
 }
 variable "policy" {
-  default     = ""
+  default     = null
   description = "The policy document."
 }
 
