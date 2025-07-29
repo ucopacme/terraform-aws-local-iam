@@ -41,8 +41,8 @@ variable "policy" {
 
 
 variable "policy_arn" {
-  type        = string
-  default     = null
+  type        = list(string)
+  default     = []
   description = "The ARN of the policy you want to apply."
   sensitive   = true
 }
