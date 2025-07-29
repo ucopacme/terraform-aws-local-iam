@@ -39,16 +39,6 @@ variable "policy" {
   description = "The policy document."
 }
 
-variable "policy_enabled" {
-  type        = bool
-  default     = false
-  description = "Whether to Attach Iam policy with user."
-}
-variable "policy_arn_enabled" {
-  type        = bool
-  default     = false
-  description = "Whether to Attach Iam policy with user."
-}
 
 variable "policy_arn" {
   type        = string
