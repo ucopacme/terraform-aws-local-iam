@@ -17,10 +17,13 @@ resource "aws_iam_user_policy" "default" {
 }
 
 resource "aws_iam_user_policy_attachment" "default" {
-  count      = var.enabled && var.policy_arn != "" ? 1 : 0
+  for_each = var.enabled && length(var.policy_arns) > 0 ? 
+    { for idx, arn in var.policy_arns : arn => arn } : {}
+
   user       = aws_iam_user.default[0].name
-  policy_arn = var.policy_arn
+  policy_arn = each.value
 }
+
 
 resource "aws_iam_user_group_membership" "default" {
   count      = var.enabled && length(var.groups) > 0 ? 1 : 0
